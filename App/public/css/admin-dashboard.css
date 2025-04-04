@@ -1,0 +1,61 @@
+:root {
+    --offcanvas-width: 270px;
+    --topNavbarHeight: 56px;
+}
+
+.side-navbar {
+    width: var(--offcanvas-width) !important;
+}
+
+@media (min-width: 992px) {
+    body {
+        overflow: auto !important;
+    }
+
+    .side-navbar {
+        transform: none !important;
+        visibility: visible !important;
+        top: var(--topNavbarHeight) !important;
+        height: calc(100% - var(--topNavbarHeight)) !important;
+    }
+    .close-canvas {
+        visibility: hidden;
+    }
+
+    main {
+        margin-left: var(--offcanvas-width);
+    }
+}
+
+.offcanvas-container {
+    margin-top: -6px;
+}
+
+.offcanvas.bg-dark .dropdown-divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* adjust opacity as needed */
+}
+
+.side-navbar-link {
+    display: flex;
+    align-items: center;
+}
+
+/* Push the right-icon-chevron-down icon to the right end */
+.side-navbar-link .right-icon-chevron-down {
+    display: inline-flex;
+    /* Add transition effect to the icon */
+    transition: all ease 0.50s;
+}
+
+.side-navbar-link[aria-expanded="true"] .right-icon-chevron-down {
+    /* Rotate the icon on click */
+    transform: rotate(180deg);
+}
+
+li a {
+    cursor: pointer;
+}
+
+.container .top-cards {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}

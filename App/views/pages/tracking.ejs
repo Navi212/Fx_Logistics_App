@@ -1,0 +1,164 @@
+<!-- HTML head-->
+<%- include('../partials/page-guard-head') %>
+<!-- HTML head ends here-->
+
+    <!-- Header starts here-->
+    <%- include('../partials/header') %>
+    <!-- Header ends here-->
+
+    <!-- Nav starts here -->
+    <%- include('../partials/nav') %> 
+    <!-- Nav ends here -->
+
+<!-- Tracking section starts here -->
+    <div class="tracking-container container my-5 border">
+        <div class="tracking-caption row py-3 mb-4">
+            <div>
+                <strong>Shipment with tracking number: 10241024</strong>
+            </div>
+        </div>
+    
+        <!-- Top Info Section starts here -->
+        <div class="tracking-info-top row py-2 mb-3">
+            <!-- Col 1 starts here -->
+            <div class="col-12 col-md-4 mb-4">
+                <p class="bg-success text-white d-inline-block px-2 py-1 rounded-pill">
+                    <i class="fas fa-check-circle me-1"></i> Delivered
+                </p>
+                <div class="d-flex align-items-center rounded">
+                    <p id="trackingNumber" class="m-0">10241055524</p>
+                    <button onclick="copyToClipboard()" class="btn btn-light ms-2 position-relative">
+                        <i class="fas fa-copy"></i>
+                        <span id="copyMessage" class="position-absolute top-0 start-50 translate-middle badge bg-dark text-white d-none">
+                            Copied!
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <!-- Col 1 ends here -->
+
+            <!-- Col 2 starts here -->
+            <div class="col-12 col-md-4 mb-4">
+                <div class="container">
+                    <div class="row mb-4">
+                        <div class="col-sm-3 d-flex align-items-center p-0 m-0">
+                            <% let countryCode1 = "us"; %>
+                            <img class="flag" src="https://flagcdn.com/32x24/<%= countryCode1.toLowerCase() %>.png" 
+                                 alt="<%= countryCode1 %> flag" class="me-1">
+                            <small class="text-uppercase"><%= countryCode1 %></small>
+                        </div>
+                        <div class="col-sm-2 p-0 m-0"><i class="fas fa-arrow-alt-circle-right p-0"></i></div>
+
+                        <div class="col-sm-3 d-flex align-items-center p-0 m-0">
+                            <% let countryCode = "fr"; %>
+                            <img class="flag" src="https://flagcdn.com/32x24/<%= countryCode.toLowerCase() %>.png" 
+                                 alt="<%= countryCode %> flag" class="me-1">
+                            <small class="text-uppercase"><%= countryCode %></small>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 p-0">
+                            <strong>Delivered</strong><br>
+                            <small class="small-text">Monday, February 7, 2022, 12.55 PM</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Col 2 ends here -->
+
+            <!-- Col 3 starts here -->
+            <div class="col-12 col-md-4 mb-4">
+                <small class="small-text text-success d-inline-block px-0 py-1">
+                    <i class="fas fa-check-circle me-1"></i>
+                    Delivered on Monday, February 7, 2022, 12.55 PM
+                </small>
+                <small class="small-text d-inline-block px-0 mt-4 pt-1">
+                    FX office 123 CA, USA
+                </small>
+            </div>
+            <!-- Col 3 ends here -->
+        </div>
+        <!-- Top Info Section ends here -->
+    
+        <!-- Bottom Info Section starts here -->
+        <div class="tracking-info-bottom tracking-steps row mt-3 border-top">
+            <!-- Step Row 1 -->
+            <div class="row step-row mb-4 py-3">
+              <div class="col-12 col-md-4 stepper-column">
+                <div class="tracking-marker"></div>
+                <p class="small text-muted mb-1">Monday, February 7, 2022, 12:55 PM</p>
+                <p class="mb-0">PASIR GUDANG, MYS</p>
+              </div>
+              <div class="bottom-text col-12 col-md-8 p-0 px-sm-2 mt-3 mt-sm-0">
+                <h6 class="fw-bold"><i class="fas fa-check-circle me-1 text-success"></i>DELIVERED</h6>
+                <p>More details about the delivery.</p>
+              </div>
+            </div>
+            
+            <!-- Step Row 2 -->
+            <div class="row step-row mb-4 py-3">
+              <div class="col-12 col-md-4 stepper-column">
+                <div class="tracking-marker"></div>
+                <p class="small text-muted mb-1">Monday, February 7, 2022, 9:00 AM</p>
+                <p class="mb-0">PASIR GUDANG, MYS</p>
+              </div>
+              <div class="bottom-text col-12 col-md-8 p-0 px-sm-2 mt-3 mt-sm-0">
+                <h6 class="fw-bold">OUT FOR DELIVERY</h6>
+                <p>Shipment is on its way to the recipient.</p>
+                <div>
+                    <a tabindex="0" class="btn btn-sm btn-danger popover-dismiss position-relative" role="button"
+                    data-bs-toggle="popover" data-bs-trigger="focus" title="Shipment stopped!" 
+                    data-bs-content="Shipment has been stopped by customs. Contact your agent.">
+                    Urgent Attn Required<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
+                        1+
+                        <span class="visually-hidden">unread messages</span>
+                      </span>
+                  </a>
+                </div>
+                <script>
+                    var popover = new bootstrap.Popover(document.querySelector('.popover-dismiss'),{trigger: 'focus'})
+                </script>
+
+              </div>
+            </div>
+            
+            <!-- Step Row 3 -->
+            <div class="row step-row mb-4 py-3">
+              <div class="col-12 col-md-4 stepper-column">
+                <div class="tracking-marker"></div>
+                <p class="small text-muted mb-1">Monday, February 7, 2022, 7:00 AM</p>
+                <p class="mb-0">MUAR, MYS</p>
+              </div>
+              <div class="bottom-text col-12 col-md-8 p-0 px-sm-2 mt-3 mt-sm-0">
+                <h6 class="fw-bold">DEPARTED FROM FACILITY</h6>
+                <p>Shipment left the sorting facility.</p>
+              </div>
+            </div>
+          
+          </div>
+        </div>
+    <!-- Tracking section ends here -->
+    <!-- Tracking section script for clipboard copy feature starts here -->
+    <script>
+        function copyToClipboard() {
+            var text = document.getElementById("trackingNumber").innerText.trim();
+            navigator.clipboard.writeText(text).then(() => {
+                let message = document.getElementById("copyMessage");
+                message.classList.remove("d-none");
+                setTimeout(() => {
+                    message.classList.add("d-none");
+                }, 2000);
+            }).catch(err => {
+                console.error("Error copying text: ", err);
+            });
+        }
+    </script>
+    <!-- Tracking section script for clipboard copy feature ends here -->
+
+    <!-- Footer -->
+    <%- include('../partials/footer') %> 
+    <!-- Footer -->
+
+<!-- HTML tail-->
+<%- include('../partials/page-guard-tail') %>
+<!-- HTML tail ends here-->

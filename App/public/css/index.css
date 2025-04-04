@@ -1,0 +1,303 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Font Settings */
+html {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px; 
+    line-height: 1.5;
+    color: #343a40;
+  }
+  
+  /* Body */
+  body {
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: inherit; /* Inherit the global font */
+    font-weight: 600; /* Slightly bolder for emphasis */
+    margin-top: 0;
+    margin-bottom: 0.5em;
+  }
+  
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.75rem; }
+  h4 { font-size: 1.5rem; }
+  h5 { font-size: 1.25rem; }
+  h6 { font-size: 1rem; }
+  
+  /* Paragraphs */
+  p {
+    font-size: .900rem;
+    font-weight: 400;
+    margin-bottom: 1em;
+    color: #343a40;
+  }
+  
+  /* Links */
+  a {
+    font-size: .900rem;
+    font-weight: 400;
+    text-decoration: none;
+    color: #343a40;
+  }
+  a:hover,
+  a:focus {
+    text-decoration: underline;
+    color: rgba(192, 2, 2, 0.795);
+    cursor: pointer;
+  }
+  
+  .small-text {
+    font-size: 0.8rem;  
+    color: #6c757d;
+  }
+  
+
+  nav .hoverable-nav-link:hover {
+    text-decoration: underline;
+    color: rgba(192, 2, 2, 0.795);
+    cursor: pointer;
+  }
+  
+  /* List Items */
+  li {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  
+/* Header bg color */
+.header-section {
+    background-color: #fc0;
+    width: auto;
+}
+
+header a {
+    margin-left: 2px
+}
+
+header .text-icon:hover {
+    color:rgba(192, 2, 2, 0.795);
+    cursor: pointer;
+}
+
+@media screen and (min-width: 771px) {
+    .service {
+        margin-top: 200px;
+        margin-bottom: 20px;
+        height: 20rem;
+        /* background-color: red; */
+    }
+}
+
+@media screen and (min-width: 458px) and (max-width: 770px) {
+    .service {
+        margin-top: 250px;
+        margin-bottom: 20px;
+        height: 20rem;
+        overflow: auto;
+        /* background-color: blue; */
+    }
+
+    .service-image {
+        height: 11rem;
+        width: 100%;
+        padding-bottom: 5px;
+    }
+
+}
+
+/* Carousel and tracking input box */
+@media screen and (max-width: 459px) {
+    header.header-section, .carousel-cards {
+        display: none;
+    }
+
+    .tracking-input-box {
+        padding: 5px;
+    }
+
+    .service {
+        margin-top: 70px;
+        margin-bottom: 20px;
+        height: 20rem;
+        /* background-color: pink; */
+        overflow: auto;
+    }
+
+    .service-image {
+        height: 11rem;
+        width: 100%;
+        padding-bottom: 5px;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Make navbar sticky on small devices */
+    .sticky-sm {
+        position: sticky !important;
+        top: 0;
+        z-index: 1030; /* Ensure it stays on top */
+        /* background-color:#fc0 !important; */
+    }
+
+    .z-index-cards {
+      position: static !important;
+      left: auto !important;
+      right: auto !important;
+      margin-bottom: 1rem; 
+      height: auto !important; /* let the height be determined by content */
+    }
+    .z-index-cards-container {
+      height: auto !important;
+    }
+  }
+    
+
+.z-index-cards-container  {
+    /* background-color: yellow; */
+    height: 500px;
+}
+
+.left-container {
+    height: 350px;
+    top: 70px;
+    z-index: 1;
+}
+
+.right-container {
+    height: 450px;
+    top: 25px;
+}
+
+.copyright-div {
+    height: 250px;
+}
+
+.caro-cards {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+/* flag is defined in tracking.ejs */
+.caro-cards:hover, .flag:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-cards:active {
+    transform: translateY(2px);
+}
+
+.z-index-cards {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.card-title:hover, .bottom-cards .text:hover {
+    color: rgba(192, 2, 2, 0.795);
+    cursor: pointer;
+}
+
+.caro-cards .fas {
+    font-size:24px;
+    color:rgba(192, 2, 2, 0.795);
+    cursor: pointer;
+}
+
+.bottom-cards .fas {
+    font-size: 12px;
+    margin-left: 5px;
+    color:rgba(192, 2, 2, 0.795);
+    cursor: pointer;
+}
+
+.tracking-container {
+    border: 1px solid #ddd;
+    width: 70%;
+    height: auto;
+}
+
+.tracking-container .tracking-caption {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.tracking-info-top > div, .tracking-info-bottom > div {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+
+/* Parent container draws the vertical line in the background */
+.tracking-steps {
+    position: relative; /* For the pseudo-element line */
+    margin-left: 3px;  /* Space on left so line & markers don't overlap text */
+  }
+  
+  /* The vertical line */
+  .tracking-steps::before {
+    content: "";
+    position: absolute;
+    left: -10px;       /* Align with the circle markers */
+    top: 0;
+    bottom: 0;
+    width: 2px;      /* Thickness of the vertical line */
+    background-color: #ddd;
+  }
+  
+  /* Each row that contains the left marker column & right status column */
+  .step-row {
+    position: relative; /* So we can position markers if needed */
+  }
+  
+  /* Left column that holds the marker & text */
+  .stepper-column {
+    position: relative;
+    padding-left: 2px; /* Extra space for the marker */
+  }
+  
+  /* The circle marker */
+  .tracking-marker {
+    position: absolute;
+    left: -16px; /* Centers the circle on the line (tweak as needed) */
+    top: -22px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 4px solid #28a745; /* Green border for "completed" look */
+    z-index: 1; /* Ensure it's above the line */
+  }
+  
+  
+/* Login form */
+/* Center container vertically and horizontally */
+.login-page {
+  min-height: 100vh;
+}
+/* Login container styles */
+.login-container {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  height: 480px;
+}
+/* Responsive container width */
+@media (max-width: 576px) {
+  .login-container {
+    width: 90%;
+  }
+}
+@media (min-width: 577px) {
+  .login-container {
+    width: 30%;
+  }
+}

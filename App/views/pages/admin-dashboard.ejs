@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>FX Admin</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/admin-dashboard.css">
+
+    <link rel="stylesheet" href="/DataTables/dataTables2.2.2.css" />
+    <script src="/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+
+  </head>
+    <body>
+        <!-- Top Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container-fluid ps-0 offcanvas-container">
+                <!-- offcanvas trigger -->
+                <button class="navbar-toggler ms-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- offcanvas trigger -->
+                 <!-- Brand logo -->
+                <a class="navbar-brand me-auto p-0" href="#">
+                    <svg width="160" height="30" viewBox="0 0 250 60" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="55" font-family="Montserrat, sans-serif" font-size="50" font-weight="700" fill="#E3000F">
+                            F
+                        </text>
+                        <g transform="translate(20, 5)">
+                            <line x1="-10" y1="65" x2="80" y2="-15" stroke="#E3000F" stroke-width="8" stroke-linecap="round" />
+                            <line x1="10" y1="10" x2="50" y2="50" stroke="#E3000F" stroke-width="8" stroke-linecap="round" />
+                        </g>
+                    </svg>
+                </a>             
+                 <!--Brand logo  -->
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <form class="d-flex ms-auto">
+                    <div class="input-group ms-1 me-sm-2 my-2">
+                        <input type="text" class="form-control" placeholder="Search ..." aria-label="Search ..." aria-describedby="button-addon2">
+                        <button class="btn btn-primary" type="button" id="button-addon2"><span>
+                            <i class="fas fa-search"></i>
+                        </span></button>
+                      </div>                
+                </form>
+                <ul class="navbar-nav ms-2 mb-2 mb-lg-0">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <span><i class="fas fa-user-alt"></i></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <!-- Top Navbar -->
+
+          <!-- Offcanvas -->
+          <!-- Setting data-bs-backdrop="false" prevents overlay effect on page when offcanvas is clicked -->
+          <div class="offcanvas offcanvas-start side-navbar mt-lg-2 bg-dark text-white" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" data-bs-backdrop="false">
+            <!-- <div class="offcanvas-header"> -->
+              <!-- <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5> -->
+              <!-- <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div> -->
+            <div class="offcanvas-body p-0">
+                <nav class="navbar-dark">
+                    <ul class="navbar-nav">
+                        <li class="d-flex justify-content-between">
+                            <div class="text-secondary small fw-bold text-uppercase px-3 pb-2 align-content-center">CORE</div>
+                            <div class="offcanvas-header close-canvas">
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+
+                        </li>
+                        <li>
+                            <a href="#" class="text-decoration-none text-white active px-3">
+                                <span class="me-2">
+                                    <i class="fas fa-dashboard"></i>
+                                </span>
+                                <span>
+                                    Dashboard
+                                </span>
+                            </a>
+                        </li>
+                        <li class="my-4">
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <div class="text-secondary small fw-bold text-uppercase px-3">INTERFACE</div>
+                        </li>
+                        <li>
+                            <a class="nav-link side-navbar-link px-3" href="#" role="button" aria-expanded="false" aria-controls="collapseExample">
+                               <span><i class="fas fa-book-open	me-2"></i></span>
+                               <span>Layouts</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link side-navbar-link px-3" href="#" role="button" aria-expanded="false" aria-controls="collapseExample">
+                               <span><i class="fas fa-book-open	me-2"></i></span>
+                               <span>Reviews</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link side-navbar-link px-3" href="#" role="button" aria-expanded="false" aria-controls="collapseExample">
+                               <span><i class="fas fa-book-open	me-2"></i></span>
+                               <span>Visualizations</span>
+                            </a>
+                        </li>
+                        <li class="my-4">
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <div class="text-secondary small fw-bold text-uppercase px-3">ADDONS</div>
+                        </li>
+                        <li>
+                            <a class="nav-link side-navbar-link px-3" data-bs-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
+                               <span><i class="fas fa-book-open	me-2"></i></span>
+                               <span>Categories</span>
+                               <!-- Push the fa-chevron-down icon to the right end with ms-auto-->
+                               <span class="right-icon-chevron-down ms-auto"><i class="fas fa-chevron-down"></i></span>
+                            </a>
+                            <div class="collapse" id="collapseExample2">
+                            <div>
+                                <ul class="navbar-nav ps-3">
+                                    <li>
+                                        <a class="nav-link px-3">
+                                            <span><i class="fas fa-book-open me-2"></i></span>
+                                            <span>Nested Link 1</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link px-3">
+                                            <span><i class="fas fa-book-open me-2"></i></span>
+                                            <span>Nested Link 2</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link px-3">
+                                            <span><i class="fas fa-book-open me-2"></i></span>
+                                            <span>Nested Link 3</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="my-4">
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <div class="text-secondary small fw-bold text-uppercase px-3">SETTINGS</div>
+                        </li>
+                        <li>
+                            <a class="nav-link side-navbar-link px-3" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3">
+                               <span><i class="fas fa-book-open	me-2"></i></span>
+                               <span>System</span>
+                               <!-- Push the fa-chevron-down icon to the right end with ms-auto-->
+                               <span class="right-icon-chevron-down ms-auto"><i class="fas fa-chevron-down"></i></span>
+                            </a>
+                            <div class="collapse" id="collapseExample3">
+                            <div>
+                                <ul class="navbar-nav ps-3">
+                                    <li>
+                                        <a class="nav-link px-3">
+                                            <span><i class="fas fa-book-open me-2"></i></span>
+                                            <span>Nested Link 1</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link px-3">
+                                            <span><i class="fas fa-book-open me-2"></i></span>
+                                            <span>Nested Link 2</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link px-3">
+                                            <span><i class="fas fa-book-open me-2"></i></span>
+                                            <span>Nested Link 3</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+          </div>
+          <!-- Offcanvas -->
+
+        <!-- main -->
+        <main class="mt-5 pt-3">
+            <!-- Top cards -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 my-3">
+                        <h5 class="fw-bold">Dashboard</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- <div class="col-6 col-md-3 mb-3"> -->
+                        <div class="col-12 col-sm-6 col-md-3 mb-3">
+                            <!-- <div class="card h-100 top-cards" style="max-width: 18rem;"> -->
+                                <div class="card h-100 top-cards">
+                                    <div class="card-header bg-transparent border-success">Header</div>
+                            <div class="card-body text-success">
+                              <h5 class="card-title">Success card title</h5>
+                              <p class="card-text">Some quick example text to build on the card.</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-success">Footer</div>
+                          </div>
+                    </div>
+                    <!-- <div class="col-6 col-md-3 mb-3"> -->
+                        <div class="col-12 col-sm-6 col-md-3 mb-3">
+                            <!-- <div class="card h-100 top-cards" style="max-width: 18rem;"> -->
+                        <div class="card h-100 top-cards">
+                            <div class="card-header bg-transparent border-success">Header</div>
+                            <div class="card-body text-success">
+                              <h5 class="card-title">Success card title</h5>
+                              <p class="card-text">Some quick example text to build on the card.</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-success">Footer</div>
+                          </div>
+                    </div>
+                    <!-- <div class="col-6 col-md-3 mb-3"> -->
+                        <div class="col-12 col-sm-6 col-md-3 mb-3">
+                            <!-- <div class="card h-100 top-cards" style="max-width: 18rem;"> -->
+                        <div class="card h-100 top-cards">
+                            <div class="card-header bg-transparent border-success">Header</div>
+                            <div class="card-body text-success">
+                              <h5 class="card-title">Success card title</h5>
+                              <p class="card-text">Some quick example text to build on the card.</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-success">Footer</div>
+                          </div>
+                    </div>
+                    <!-- <div class="col-6 col-md-3 mb-3"> -->
+                        <div class="col-12 col-sm-6 col-md-3 mb-3">
+                            <!-- <div class="card h-100 top-cards" style="max-width: 18rem;"> -->
+                        <div class="card h-100 top-cards">
+                            <div class="card-header bg-transparent border-success">Header</div>
+                            <div class="card-body text-success">
+                              <h5 class="card-title">Success card title</h5>
+                              <p class="card-text">Some quick example text to build on the card.</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-success">Footer</div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Top cards -->
+
+            <!-- Middle Charts -->
+            <div class="container my-5">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card mb-3 top-cards">
+                            <div class="card-header">Charts</div>
+                            <div class="card-body">
+                                <div>
+                                    <canvas id="myChartLeft"></canvas>
+                                </div>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-3 top-cards">
+                            <div class="card-header">Charts</div>
+                            <div class="card-body">
+                                <div>
+                                    <canvas id="myChartRight"></canvas>
+                                </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Middle Charts -->
+
+            <!-- DataTable -->
+            <div class="container my-5 pt-3">
+                <h6 class="fw-bold ps-2">RECORDS</h6>
+                <hr class="table-group-divider">
+            <div class="row table-responsive">
+                <!-- <table id="example" class="table-striped table-bordered nowrap" style="width:100%"> -->
+                    <table id="recordsTable" class="display compact" style="width:100%">
+                    <thead class="bg-dark text-white">
+                        <tr>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Office</th>
+                            <th>Age</th>
+                            <th>Start date</th>
+                            <th>Salary</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tiger Nixon</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
+                            <td>61</td>
+                            <td>2011-04-25</td>
+                            <td>$320,800</td>
+                        </tr>
+                        <tr>
+                            <td>Garrett Winters</td>
+                            <td>Accountant</td>
+                            <td>Tokyo</td>
+                            <td>63</td>
+                            <td>2011-07-25</td>
+                            <td>$170,750</td>
+                        </tr>
+                        <tr>
+                            <td>Ashton Cox</td>
+                            <td>Junior Technical Author</td>
+                            <td>San Francisco</td>
+                            <td>66</td>
+                            <td>2009-01-12</td>
+                            <td>$86,000</td>
+                        </tr>
+                        <tr>
+                            <td>Cedric Kelly</td>
+                            <td>Senior Javascript Developer</td>
+                            <td>Edinburgh</td>
+                            <td>22</td>
+                            <td>2012-03-29</td>
+                            <td>$433,060</td>
+                        </tr>
+                        <tr>
+                            <td>Airi Satou</td>
+                            <td>Accountant</td>
+                            <td>Tokyo</td>
+                            <td>33</td>
+                            <td>2008-11-28</td>
+                            <td>$162,700</td>
+                        </tr>
+                        <tr>
+                            <td>Brielle Williamson</td>
+                            <td>Integration Specialist</td>
+                            <td>New York</td>
+                            <td>61</td>
+                            <td>2012-12-02</td>
+                            <td>$372,000</td>
+                        </tr>
+                        <tr>
+                            <td>Herrod Chandler</td>
+                            <td>Sales Assistant</td>
+                            <td>San Francisco</td>
+                            <td>59</td>
+                            <td>2012-08-06</td>
+                            <td>$137,500</td>
+                        </tr>
+                        <tr>
+                            <td>Rhona Davidson</td>
+                            <td>Integration Specialist</td>
+                            <td>Tokyo</td>
+                            <td>55</td>
+                            <td>2010-10-14</td>
+                            <td>$327,900</td>
+                        </tr>
+                        <tr>
+                            <td>Colleen Hurst</td>
+                            <td>Javascript Developer</td>
+                            <td>San Francisco</td>
+                            <td>39</td>
+                            <td>2009-09-15</td>
+                            <td>$205,500</td>
+                        </tr>
+                        <tr>
+                            <td>Sonya Frost</td>
+                            <td>Software Engineer</td>
+                            <td>Edinburgh</td>
+                            <td>23</td>
+                            <td>2008-12-13</td>
+                            <td>$103,600</td>
+                        </tr>
+                        <tr>
+                            <td>Jena Gaines</td>
+                            <td>Office Manager</td>
+                            <td>London</td>
+                            <td>30</td>
+                            <td>2008-12-19</td>
+                            <td>$90,560</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </div>
+        <!-- DataTable -->
+        </main>
+        <!-- main -->
+    
+        <!-- Scripts -->
+        <!-- Charts -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="/js/chartsLeft.js"></script>
+        <script src="/js/chartsRight.js"></script>
+        <!-- Charts -->
+
+        <!-- Datatables -->
+        <script src="/js/jquery-3.7.1.min.js"></script>
+        <script src="/DataTables/dataTables2.2.2.js"></script>
+        <!-- <script src="">new DataTable('#example')</script> -->
+        <script>
+            $(document).ready( function () {
+                $('#recordsTable').DataTable();
+            } )
+        </script>
+        <!-- Datatables -->
+        <!-- Scripts -->
+    </body>
+</html>
