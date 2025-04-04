@@ -1,4 +1,4 @@
-#FX Logistics Web Application
+# FX Logistics Web Application
 
 ## Architecture: Monolitic
 
